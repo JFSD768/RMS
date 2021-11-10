@@ -42,7 +42,7 @@ public class AppTest {
 			{
 				
 				case '1':
-				  String s=null;
+				  String s=" ";
 				  do
 				  {	
 					try {
@@ -56,8 +56,9 @@ public class AppTest {
 						String mb=br.readLine();
 						System.out.print("Date Of Joining (in year-month-day): ");
 						LocalDate date = null;
-						if(StringUtils.isNotBlank(br.readLine())) {
-							date = LocalDate.parse(br.readLine());
+						String tdate = br.readLine();
+						if(StringUtils.isNotBlank(tdate)) {
+							date = LocalDate.parse(tdate);
 						}
 						Roommate rmt=new Roommate();
 						rmt.setName(nm);
@@ -78,7 +79,7 @@ public class AppTest {
 					break;
 				
 				case '2':
-				  String s2=null;
+				  String s2= " ";
 				  do
 				  {
 					 try {
