@@ -6,21 +6,6 @@ pipeline {
                 sh './mvnw -B -DskipTests clean package' 
             }
         }
-        stage('Test') {
-            steps {
-                sh './mvnw test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-        }
-        stage('Deliver') {
-            steps {
-                sh './jenkins/scripts/deliver.sh'
-            }
-        }
     }
     post {
         always {
@@ -28,7 +13,7 @@ pipeline {
             emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
-            
+            	to: "gmmr.mca007@gmail.com"
         }
     }
 }
