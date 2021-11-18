@@ -19,7 +19,7 @@ public class AppTest {
 	
 	public static void main(String[] args) throws Exception
 	{
-		LOG.info("Welcome to ROOM MANAGEMENT SYSTEM");
+		LOG.info("Welcome to RMS - ROOM MANAGEMENT SYSTEM");
 		boolean flag=true;
 		RMSResponseModel response;
 		RoommateController rmtController = new RoommateController();
